@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Info{
+        constructor(name){
+            this.name = name;
+        }
+
+        show(){
+            console.log(this.name);
+        }
+
+        static cal(par = 1){
+            console.log(par*3);
+            // console.log(this.name);
+        }
+    }
+
+    const info = new Info('le van b');
+    info.show();
+
+    // khi truy cập đến static method không cần phải khởi tạo đối tượng
+    Info.cal(5);
+
+    class Rect extends Info {
+        constructor(name, long){
+            super(name);
+            this.long = long;
+        }
+
+        area(a = 5){
+            console.log(this.long*5);
+        }
+    }
+
+    const s = new Rect('nguyen van a', 12);
+    s.show();
+    s.area();
+
+    // khi truy cập đến static method không cần phải khởi tạo đối tượng
+    Rect.cal(10)
+
+
+</script>
+</html>
